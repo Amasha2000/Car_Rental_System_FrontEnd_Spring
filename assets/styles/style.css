@@ -1,0 +1,1684 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F8F8F8;
+    overflow-x: hidden;
+}
+
+
+/*Nav Bar*/
+header > nav {
+    width: 100vw;
+    height: 70px;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+#navbar{
+    position: fixed;
+}
+
+nav ul:nth-child(1){
+    padding-left: 60%;
+}
+
+nav ul:nth-child(1)>li{
+    font-weight:500;
+    font-size: 17px;
+    border-radius: 5px;
+    transition: 1.5s ease-in-out ;
+}
+
+nav ul:nth-child(1)>li:hover{
+    background: linear-gradient(rgb(235, 52, 128),rgb(130, 19, 163),rgb(62, 233, 243));
+}
+
+nav ul:nth-child(1)>li:nth-child(4){
+    background-color: #63128b;
+}
+
+#menu3{
+    padding-left: 5%;
+}
+
+#menu3 > li > i {
+    position: relative;
+    color: rgb(216, 80, 243);
+    transition: all 0.3s ease-in-out;
+    font-size: 25px;
+    top: 30%;
+    margin: 10px;
+    transform: translate(-50%, -50%);
+}
+
+#menu3 > li > i:hover {
+    color: #FBFBFB;
+    transition: all 0.3s ease-in-out;
+}
+
+#menu3 > .notification > .notification-item-count {
+    position: absolute;
+    font-size: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 30px;
+    background-color: #c61987;
+}
+
+#menu3 > .notification > .notification-item-count {
+    color: white;
+}
+
+#menu3 > .cart > .cart-item-count {
+    position: absolute;
+    font-size: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 30px;
+    background-color: #c61987;
+}
+
+#menu3 > .cart > .cart-item-count {
+    color: white;
+}
+
+/*--------------------------------------------------*/
+
+
+/*Notification popup styling*/
+.notification-popup {
+    position: absolute;
+    z-index: 1;
+    width: 600px;
+    min-height: 300px;
+    left: 70px;
+    top:220px;
+    display: flex;
+    border-radius: 4px;
+    background: rgba(166, 213, 250, 0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+.notification-popup > .notification-popup-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: auto;
+}
+
+.notification-popup > .notification-popup-container > div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.notification-popup > .notification-popup-container > .content > div {
+    position: relative;
+    width: 95%;
+    min-height: 120px;
+    background-color: #dbdbdb;
+    left: 0;
+    right: 0;
+    top: 10px;
+    margin: auto;
+}
+
+.notification-popup > .notification-popup-container > .content > div > p {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.notification-popup > .notification-popup-container > .content > div > #notification-message {
+    top: 20px;
+}
+
+.notification-popup > .notification-popup-container > .content > div > #notifiocation-rid {
+    top: 65px;
+}
+
+.notification-popup > .notification-popup-container > .content > div > #notification-rental-fee {
+    top: 95px;
+}
+
+.notification-popup > .notification-popup-container > .content > div > .btn-remove-notification {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    right: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.notification-popup > .notification-popup-container > .content > div > .btn-remove-notification:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/*------------------------------------------*/
+
+
+/*Cart popup styling*/
+.cart-popup {
+    position: absolute;
+    z-index: 2;
+    width: 550px;
+    height: 70px;
+    left: 850px;
+    top: 140px;
+    border-radius: 4px;
+    background: rgba(166, 213, 250, 0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-popup > .cart-popup-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+.cart-popup > .cart-popup-container > .content > .item {
+    position: relative;
+    width: 95%;
+    height: 120px;
+    border: 2px solid #e3e2e2;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .btn-remove-item {
+    position: absolute;
+    color: black;
+    right: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .btn-remove-item:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-popup > .cart-popup-container > .content > div > p {
+    position: absolute;
+    color: black;
+    width: max-content;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .car-brand {
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .car-ct-id {
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .qty {
+    top: 72px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .cart-rental-fee {
+    bottom: 0;
+    left: 20px;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .cart-ldw-fee {
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > .content > div > p > span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding-left: 10px;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .cart-rental-fee > span {
+    color: #1D741B;
+    font-weight: 600;
+}
+
+.cart-popup > .cart-popup-container > .content > div > .cart-ldw-fee > span {
+    color: #1D741B;
+    font-weight: 600;
+}
+
+.cart-popup > .cart-popup-container > .total-container > div {
+    position: relative;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+.cart-popup > .cart-popup-container > .total-container > div > p {
+    font-family: 'Poppins', sans-serif;
+    width: max-content;
+    font-weight: 700;
+    transform: translate(10px, 10px);
+}
+
+.cart-popup > .cart-popup-container > .total-container > div > p > span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding-left: 10px;
+    color: #3c044d;
+    width: max-content;
+}
+
+.cart-popup > .cart-popup-container > .bank-slip-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-popup > .cart-popup-container > .bank-slip-container > div > p {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cart-popup > .cart-popup-container > .button-container2 > button {
+    background: #18A558;
+    width: 60%;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 3px 4px 1px #a0a0a0;
+}
+
+.cart-popup > .cart-popup-container > .button-container2 > button:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/*------------------------------------------*/
+
+/*Profile popup styling*/
+.profile-popup {
+    position: fixed;
+    display: none;
+    z-index: 10;
+    width: 280px;
+    min-height: 80px;
+    right: 60px;
+    top: 55px;
+    border-radius: 4px;
+    background-color: rgba(61, 22, 99, 0.9);
+}
+
+.profile-popup > .profile-popup-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.profile-popup > .profile-popup-container > div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.profile-popup > .profile-popup-container > .content > div {
+    position: relative;
+    width: 95%;
+    height: 120px;
+    background-color: #ace7fa;
+    left: 0;
+    right: 0;
+    top: 10px;
+    margin: auto;
+}
+
+.profile-popup > .profile-popup-container > .content > div > p {
+    width: 100%;
+}
+
+
+/*------------------------------------------*/
+
+main {
+    position: relative;
+}
+
+/*Home styling*/
+.home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(10, 10, 10, 0.7),rgba(12, 12, 12, 0.75)),url("../images/background/car_image3.jpg");
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+}
+
+.home > .blend {
+    position: absolute;
+    background-color: #303045;
+    width: 400%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.home > #text {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+}
+
+.home #words{
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: rgb(132, 167, 250);
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.home #para{
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: rgb(116, 216, 239);
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow{
+    position: absolute;
+    top:70%;
+    left: 50%;
+    transform: translate(-50%,50%);    
+}
+
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid rgb(176, 49, 231);
+    border-right: 5px solid rgb(244, 50, 150);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll 2s infinite;
+}
+
+.arrow span:nth-child(2){
+    animation-delay: -.2s;
+}
+
+.arrow span:nth-child(3){
+    animation-delay: -.4s;
+}
+
+@keyframes scroll{
+    0%{
+     opacity: 0;
+     transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+     opacity: 1; 
+    }
+    100%{
+     opacity: 0;
+     transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+/*------------------------*/
+
+/*Login styling*/
+.login {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F8F8F8;
+}
+
+.login > h1 {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    color: #4f0456;
+    left: 27%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+#topic {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    left: 28%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+#register{
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    left: 70%;
+    top: 73%;
+    transform: translate(-50%, -50%);
+}
+
+.login > p > span {
+    padding-left: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #005BEA;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > p > span:hover {
+    color: #303045;
+    transition-duration: 0.3s;
+}
+
+.login > .image1 {
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    background: url("../images/login/car_image.png") no-repeat center;
+    background-size: cover;
+    top: 65%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.login > form {
+    position: absolute;
+    width: 320px;
+    height: 270px;
+    right: 180px;
+    top: 47%;
+    left:60%;
+    transform: translateY(-50%);
+}
+
+.login > form > div {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+
+.login > form > .email-container {
+    top: 0;
+}
+
+.login > form > .password-container {
+    top: 85px;
+}
+
+.login > form > div > input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #e9efee;
+    box-shadow: 2px 3px 4px 1px #e3e6e6;
+    color: rgb(26, 20, 190);
+    position: absolute;
+    text-indent: 35px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    left: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.login > form > div > input:focus {
+    outline: none !important;
+    transition: all 0.1s ease-in-out;
+    border: 3px solid #a3b5c1;
+}
+
+.login > form > .password-container > i {
+    position: absolute;
+    cursor: pointer;
+    color: gray;
+    z-index: 2;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.login > form > a {
+    position: absolute;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: gray;
+    top: 150px;
+    right: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > form > a:hover {
+    color: #005BEA;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > form > button {
+    position: absolute;
+    background-color: #46065b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 3px 4px 1px #779e9e;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > form > button:hover {
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+}
+
+/*---------------------------------------------------*/
+
+/*Registration view styling*/
+.login > .registration-popup {
+    position: absolute;
+    display: none;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container {
+    position: relative;
+    height: 550px;
+    width: 900px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container > .right-side {
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.login > .registration-popup > .popup-container > .left-side {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0 0 5px;
+    background-color: #5f1473;
+    overflow: hidden;
+}
+
+.login > .registration-popup > .popup-container > .right-side > h2 {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    width: max-content;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login > .registration-popup > .popup-container > .right-side > h2 {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1b117d;
+    width: max-content;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login > .registration-popup > .popup-container > .right-side > span {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login > .registration-popup > .popup-container > .right-side > div {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    top: 80px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .reg-as-customer-container {
+    left: 40%;
+    transform: translateX(-50%);
+}
+
+.login > .registration-popup > .popup-container > .right-side > .reg-as-driver-container {
+    left: 61%;
+    transform: translateX(-50%);
+}
+
+.login > .registration-popup > .popup-container > .right-side > div > button {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 30px;
+    border: 2px solid gray;
+    background: none;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+
+.login > .registration-popup > .popup-container > .right-side > div > h3 {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container {
+    position: absolute;
+    width: 100%;
+    height: 530px;
+    top: 160px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > .registration-image {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/login/signin_car.png") no-repeat center;
+    background-size: contain;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > div {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > div > input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #e9efee;
+    box-shadow: 2px 3px 4px 1px #e3e6e6;
+    color: gray;
+    position: absolute;
+    text-indent: 35px;
+    width: 60%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    left: 10px;
+    transition: all 0.1s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > div > input:focus {
+    outline: none !important;
+    transition: all 0.1s ease-in-out;
+    border: 3px solid #a3b5c1;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-name-container {
+    top: 0;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-address-container {
+    top: 65px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-email-container {
+    top: 130px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-nic-container {
+    top: 195px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-nic-container > input {
+    width: 45%;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-license-container {
+    top: 260px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-license-container > input {
+    width: 45%;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-nic-container > div {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    top: 0;
+    right: 20px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-nic-container > div > .reg-nic-image {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 5px;
+    background-color: #e2dede;
+    cursor: pointer;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-license-container > div {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    top: 0;
+    right: 20px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-license-container > div > .reg-license-image {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 5px;
+    background-color: #e2dede;
+    cursor: pointer;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-contact-container {
+    top: 325px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > .reg-user-password-container {
+    top: 390px;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > button {
+    position: absolute;
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    left: 0;
+    right: 0;
+    top: 470px;
+    margin: auto;
+    background-color: #1e0e74;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    box-shadow: 2px 3px 4px 1px #779e9e;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container > .right-side > .registration-form-container > form > button:hover {
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container > .right-side > button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    top: 5px;
+    right: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container > .right-side > button:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.login > .registration-popup > .popup-container > .right-side > button > i {
+    position: absolute;
+    font-size: 22px;
+    left: 50%;
+    top: 50%;
+    color: gray;
+    transform: translate(-50%, -50%);
+}
+
+.login > .registration-popup > .popup-container > .left-side > h2 {
+    position: absolute;
+    z-index: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(210, 208, 208);
+    font-size: 50px;
+    width: max-content;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.login > .registration-popup > .popup-container > .left-side > p {
+    position: absolute;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    width: max-content;
+    color: white;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.login > .registration-popup > .popup-container > .left-side > .circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    background-color: #a933db99;
+    bottom: -150px;
+    left: -150px;
+}
+
+
+/*--------------------------------------------------------------------------------------*/
+
+/*Vehicles screen styling*/
+.vehicles {
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+}
+
+.parent-container {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+}
+
+.parent-container > div {
+    position: relative;
+}
+
+/*title-container styling*/
+.title-container {
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 80px;
+    grid-column: 1/3;
+}
+
+.title-container > h1 {
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    left: 50px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+/*general-cars-title-container styling*/
+.general-cars-title-container {
+    display: none;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    grid-column: 1/3;
+}
+
+.general-cars-title-container > h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    left: 80px;
+    text-decoration: underline;
+}
+/*general-cars-category styling*/
+.general-cars-category {
+    display: none;
+    left: 20px;
+    /*right: 0;
+    margin: auto;*/
+    width: 100%;
+    /*display: grid;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.general-car-details-container {
+    display: none;
+    height: 530px;
+    width: 95%;
+    background-color: #f7f7f7;
+    box-shadow: 6px 10px 8px 2px #c1c1c1;
+}
+
+/*premium-cars-title-container*/
+.premium-cars-title-container {
+    display: none;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    grid-column: 1/3;
+}
+
+.premium-cars-title-container > h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: underline;
+    font-size: 25px;
+    font-weight: 500;
+    left: 80px;
+}
+/*premium-cars-category styling*/
+.premium-cars-category {
+    display: none;
+    left: 20px;
+    width: 100%;
+    /*display: grid;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+
+.premium-car-details-container {
+    display: none;
+    height: 530px;
+    width: 95%;
+    background-color: #f7f7f7;
+    box-shadow: 6px 10px 8px 2px #c1c1c1;
+}
+
+/*luxury-cars-title-container*/
+.luxury-cars-title-container {
+    display: none;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    grid-column: 1/3;
+}
+
+.luxury-cars-title-container > h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    left: 80px;
+    text-decoration: underline;
+}
+/*luxury-cars-category styling*/
+.luxury-cars-category {
+    display: none;
+    left: 20px;
+    /*right: 0;
+    margin: auto;*/
+    width: 100%;
+    /*display: grid;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+
+.luxury-car-details-container {
+    display: none;
+    height: 530px;
+    width: 95%;
+    background-color: #f7f7f7;
+    box-shadow: 6px 10px 8px 2px #c1c1c1;
+}
+
+.footer-container {
+    grid-column: 1/3;
+}
+
+/*general, premium, luxury category childs styling*/
+.general-cars-category > div {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.general-cars-category > div:hover {
+    transform: scale(1.1);
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+}
+
+.premium-cars-category > div {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.premium-cars-category > div:hover {
+    transform: scale(1.1);
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+}
+
+.luxury-cars-category > div {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.luxury-cars-category > div:hover {
+    transform: scale(1.1);
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+}
+
+.footer-container > div {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 6px 10px 8px 2px #cccccc;
+    transition: all 0.3s ease-out;
+    cursor: crosshair;
+}
+
+/*single car image*/
+.image {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px 10px 10px 10px;
+    transition: all 0.3s ease-in-out;
+}
+.image:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #303045;
+    opacity: 0.3;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.brand {
+    position: absolute;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    bottom: 0;
+    width: 100%;
+    background-color: #42025f;
+}
+
+p > span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding-left: 10px;
+}
+
+/*car details container image*/
+.car-image {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.car-image:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #4e2f5c;
+    opacity: 0.3;
+}
+
+.car-brand {
+    position: absolute;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    top: 5px;
+    left: 10px;
+}
+
+.category-id {
+    position: absolute;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 50%;
+    left: 10px;
+}
+
+.transmission-type {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 55%;
+    left: 10px;
+}
+
+.fuel-type {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 60%;
+    left: 10px;
+}
+
+.no-of-passenger {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 65%;
+    left: 10px;
+}
+
+.daily-rate {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 70%;
+    left: 10px;
+}
+
+.monthly-rate {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 75%;
+    left: 10px;
+}
+
+.ldw-fee {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 80%;
+    left: 10px;
+}
+
+.free-mileage {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 85%;
+    left: 10px;
+}
+
+.extra-km-price {
+    position: absolute;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 90%;
+    left: 10px;
+}
+
+.color {
+    position: absolute;
+    display: flex;
+    gap: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 50%;
+    left: 40%;
+}
+
+.color > span:not(:nth-child(1)) {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.color > span:not(:nth-child(1)):hover {
+    width: 40px;
+    height: 30px;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.color > .white {
+    color: #E7EDEB;
+}
+
+/* .color > .white:hover {
+    border: 2px solid #E7EDEB;
+} */
+
+.color > .black {
+    color: #1C2520;
+}
+
+/* .color > .black:hover {
+    border: 2px solid #1C2520;
+} */
+
+.color > .red {
+    color: #DB1F48;
+}
+
+/* .color > .red:hover {
+    border: 2px solid #DB1F48;
+} */
+
+.color > .blue {
+    color: #151983;
+}
+
+/* .color > .blue:hover {
+    border: 2px solid #151983;
+} */
+
+.pickup-date-container {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 60%;
+    left: 40%;
+}
+
+.return-date-container {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 60%;
+    left: 70%;
+}
+
+.driver-check-container {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    top: 75%;
+    left: 40%;
+}
+
+.left-cars {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    top: 40%;
+    right: 20px;
+}
+
+/* .btn-increment {
+    position: absolute;
+    font-size: 18px;
+    border: none;
+    color: #686767;
+    background: none;
+    width: 30px;
+    height: 30px;
+    top: 90%;
+    left: 48%;
+    transition: all 0.3s ease-in-out;
+} */
+
+/* .btn-increment:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.qty {
+    position: absolute;
+    font-size: 18px;
+    color: #686767;
+    border: none;
+    background: none;
+    width: 30px;
+    height: 30px;
+    top: 90%;
+    left: 45%;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-decrement {
+    position: absolute;
+    font-size: 18px;
+    border: none;
+    color: #686767;
+    background: none;
+    width: 30px;
+    height: 30px;
+    top: 90%;
+    left: 40%;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-decrement:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}*/ 
+
+.rental-fee {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #D01110;
+    font-size: 18px;
+    top: 90%;
+    left: 55%;
+}
+
+.btn-add-to-cart {
+    position: absolute;
+    font-size: 18px;
+    border: none;
+    color: #43B14B;
+    background: none;
+    width: 30px;
+    height: 30px;
+    top: 90%;
+    left: 85%;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-add-to-cart:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/*------------------------------------------------*/
+
+/*Customer Form styling*/
+#customerForm{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(228, 228, 228);
+}
+
+/*------------------------------------------------*/
+
+/*Contact styling*/
+.contact {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contact > .title {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+}
+
+.contact > h3 {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 170px;
+}
+
+.contact > .container {
+    position: absolute;
+    width: max-content;
+    display: flex;
+    gap: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;
+}
+
+.contact > .container > div {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 230px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 3px 5px 2px #d4cece;
+}
+
+.contact > .container > div > .header {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    border-radius: 5px 5px 0 0;
+    top: 0;
+}
+
+.contact > .container > div:nth-child(1) > .header {
+    background-color: #0E86D4;
+}
+
+.contact > .container > div:nth-child(2) > .header {
+    background-color: #0E86D4;
+}
+
+.contact > .container > div:nth-child(3) > .header {
+    background-color: #0E86D4;
+}
+
+.contact > .container > div > h3 {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+}
+
+.contact > .container > div > p {
+    position: absolute;
+    font-size: 15px;
+    color: #1a0669;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+}
+
+.contact > .container > div:nth-child(2) > span {
+    position: absolute;
+    width: max-content;
+    cursor: pointer;
+    font-size: 13px;
+    color: #1DC690;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 88%;
+}
+
+/*-----------------------------------------------------------------*/
+
+/*Footer styling*/
+.footer {
+    position: relative;
+    width: 100vw;
+    height: 40px;
+    background: #550e63;
+}
+
+.footer > h3 {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 16px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

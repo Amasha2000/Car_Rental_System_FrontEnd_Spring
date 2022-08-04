@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Rent a Car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script> 
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navmenu" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://img.icons8.com/bubbles/344/car.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
+          </a>
+          <h6 style="color:white;">Easy Car Rental</h6>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-items">
+              <li class="nav-item">
+                <a class="nav-link active" id="navbar-home" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" id="navbar-vehicles" aria-current="page" href="#vehicles">Vehicles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#contact">Contact Us</a>
+              </li>
+              <li><a class="nav-link active" id="navbar-login" aria-current="page" href="#login" id="li-sign-in">Sign In</a>
+              </li>
+            </ul>
+            <ul id="menu3" class="navbar-nav me-auto mb-2 mb-lg-0 nav-items">
+                <!-- <li class="notification nav-item" id="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-item-count" id="notification-item-count">0</span>
+                </li>
+                <li class="cart nav-item" id="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-item-count" id="cart-item-count">0</span>
+                </li> -->
+                <li id="profile" class="nav-item"><i class="fas fa-user-circle"></i></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+        <!-- <div class="notification-popup" id="notification-popup">
+            <div class="notification-popup-container" id="notification-popup-container">
+                <div class="content" id="notification-content-container">
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>
+        <div class="cart-popup" id="cart-popup">
+            <div class="cart-popup-container" id="cart-popup-container">
+                <div class="button-container1">
+                    <button class="btn-cart-popup-close" id="btn-cart-popup-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="content" id="cart-items-container">
+                </div>
+                <div class="total-container">
+                    <div>
+                        <p>Total:<span id="cart_total_rental_fee">0.00</span></p>
+                    </div>
+                </div>
+                <div class="bank-slip-container">
+                    <div class="mb-3">
+                        <p>Loss Damage Waiver Payment<br>Attach your bank slip here</p>
+                        <input class="form-control" id="bankSlip" required type="file">
+                    </div>
+                </div>
+                <div class="button-container2">
+                    <button class="btn-proceed" id="btn-proceed" type="button"><i class="far fa-check-circle"></i></button>
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>-->
+        <div class="profile-popup" id="profile-popup">
+            <div class="profile-popup-container" id="profile-popup-container">
+                <div class="content">
+                    <div>
+                        <p><span class="user-name" id="user-name"></span></p>
+                        <p><span class="user-email" id="user-email"></span></p>
+                        <p><span class="user-id" id="user-id"></span></p>
+                    </div>
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div> 
+</header>
+<main>
+    <section class="home" id="home">
+        <div class="blend"></div>
+        <div id="words">Looking</div>
+        <div id="text"><span class="typing">to RENT a CAR</span></div>
+        <!-- <script>
+            let typed = new Typed('.typing', {
+                strings: ["to rent a CAR."],
+                typeSpeed: 20,
+                backSpeed: 200,
+                loop: true
+            });
+        </script> -->
+        <p id="para">Rent The Best Quality Cars With Us</p>
+        <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+    <section class="login" id="login">
+        <h1 class="display-1">NEED A CAR?</h1>
+        <p id="topic" class="lead">
+            Sign In to find the IDEAL Car for you
+        </p>
+        <p id="register">If you don't have an account<br>You can<span id="btnRegister">Register here!</span></p>
+        <div class="image1"></div>
+        <form>
+            <div class="email-container container-fluid">
+                <label for="txtEmail"></label>
+                <input id="txtEmail" placeholder="Enter email or phone number" required type="text">
+                <span id="email-validation"></span>
+            </div>
+            <div class="password-container container-fluid">
+                <label for="password"></label>
+                <i class="far fa-eye-slash" id="password-logo"></i>
+                <input id="password" placeholder="Password" required type="password">
+                <span id="password-validation"></span>
+            </div>
+            <button id="btn-sign-in" type="button">Sign In</button>
+        </form>
+        <div class="registration-popup" id="registration-popup">
+            <div class="popup-container" id="popup-container">
+                <div class="right-side">
+                    <h2>Create Account</h2>
+                    <span>as</span>
+                    <div class="reg-as-customer-container">
+                        <button id="btn-reg-as-customer"><i class="fas fa-street-view"></i></button>
+                        <h3>Customer</h3>
+                    </div>
+                    <div class="reg-as-driver-container">
+                        <button id="btn-reg-as-driver"><i class="fas fa-biking"></i></button>
+                        <h3>Driver</h3>
+                    </div>
+                    <section class="registration-form-container" id="registration-form-container">
+                    </section>
+                    <button id="btn-close-registration-view"><i class="far fa-times-circle"></i></button>
+                </div>
+                <div class="left-side">
+                    <h2>Welcome!</h2>
+                    <p>Sign In and choose IDEAL car for you</p>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="vehicles" id="vehicles">
+        <div class="parent-container" id="parent-container">
+            <div class="title-container" id="title-container"><h1>Vehicles</h1></div>
+
+            <div class="general-cars-title-container" id="general-cars-title-container"><h1>General Cars</h1></div>
+            <div class="general-cars-category" id="general-cars-category"></div>
+            <div class="general-car-details-container" id="general-car-details-container">
+                <div class="car-image" id="gn-car-image"></div>
+                <p class="car-brand" id="gn-car-brand"></p>
+                <p class="category-id" id="gn-category-id">CT-ID:<span></span></p>
+                <p class="transmission-type" id="gn-transmission-type">Transmission:<span></span></p>
+                <p class="fuel-type" id="gn-fuel-type">Fuel:<span></span></p>
+                <p class="no-of-passenger" id="gn-no-of-passenger">No.Passenger:<span></span></p>
+                <p class="daily-rate" id="gn-daily-rate">Daily Rate:<span></span></p>
+                <p class="monthly-rate" id="gn-monthly-rate">Monthly Rate:<span></span></p>
+                <p class="ldw-fee" id="gn-ldw-fee">LDW FEE:<span></span></p>
+                <p class="free-mileage" id="gn-free-mileage">Free Mileage:<span></span></p>
+                <p class="extra-km-price" id="gn-extra-km-price">Extra KM:<span></span></p>
+                <div class="color" id="gn-color">
+                    <span>Color:</span>
+                    <span class="white" id="gn-white"><i class="fas fa-circle"></i></span>
+                    <span class="black" id="gn-black"><i class="fas fa-circle"></i></span>
+                    <span class="red" id="gn-red"><i class="fas fa-circle"></i></span>
+                    <span class="blue" id="gn-blue"><i class="fas fa-circle"></i></span>
+                </div>
+                <span class="left-cars" id="gn-left-cars"></span>
+                <div class="pickup-date-container mb-3" id="gn-pickup-date-container">
+                    <label class="form-label" for="gn-pickup-date">Pickup Date</label>
+                    <input class="pickup-date form-control form-control-sm" id="gn-pickup-date"
+                           onchange="setPickupDate(this.id)" type="date">
+                </div>
+                <div class="return-date-container mb-3" id="gn-return-date-container">
+                    <label class="form-label" for="gn-return-date">Return Date</label>
+                    <input class="pickup-date form-control form-control-sm" id="gn-return-date"
+                           disabled onchange="setReturnDate(this.id)" type="date">
+                </div>
+                <div class="driver-check-container form-check">
+                    <input class="form-check-input" id="gn-driver" name="driver"
+                           disabled onclick="driverCheckboxOnClick(this.id)" type="checkbox" value="">
+                    <label class="form-check-label" for="gn-driver">
+                        Driver
+                    </label>
+                </div>
+                <!-- <button class="btn-increment" id="gn-btn-increment" onclick="incrementVehicleQTY(this.id)"><i
+                        class="far fa-plus-square"></i></button>
+                <span class="qty" id="gn-qty"></span>
+                <button class="btn-decrement" id="gn-btn-decrement" onclick="decrementVehicleQTY(this.id)"><i
+                        class="far fa-minus-square"></i></button> -->
+                <p class="rental-fee" id="gn-rental-fee">Rental Fee: <span>0.00</span></p>
+                <button class="btn-add-to-cart" id="gn-btn-add-to-cart" onclick="addVehicleToCart(this.id)">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+            <div class="premium-cars-title-container" id="premium-cars-title-container"><h1>Premium Cars</h1></div>
+            <div class="premium-cars-category" id="premium-cars-category"></div>
+            <div class="premium-car-details-container" id="premium-car-details-container">
+                <div class="car-image" id="pr-car-image"></div>
+                <p class="car-brand" id="pr-car-brand"></p>
+                <p class="category-id" id="pr-category-id">CT-ID:<span></span></p>
+                <p class="transmission-type" id="pr-transmission-type">Transmission:<span></span></p>
+                <p class="fuel-type" id="pr-fuel-type">Fuel:<span></span></p>
+                <p class="no-of-passenger" id="pr-no-of-passenger">No.Passenger:<span></span></p>
+                <p class="daily-rate" id="pr-daily-rate">Daily Rate:<span></span></p>
+                <p class="monthly-rate" id="pr-monthly-rate">Monthly Rate:<span></span></p>
+                <p class="ldw-fee" id="pr-ldw-fee">LDW FEE:<span></span></p>
+                <p class="free-mileage" id="pr-free-mileage">Free Mileage:<span></span></p>
+                <p class="extra-km-price" id="pr-extra-km-price">Extra KM:<span></span></p>
+                <div class="color" id="pr-color">
+                    <span>Color:</span>
+                    <span class="white" id="pr-white"><i class="fas fa-circle"></i></span>
+                    <span class="black" id="pr-black"><i class="fas fa-circle"></i></span>
+                    <span class="red" id="pr-red"><i class="fas fa-circle"></i></span>
+                    <span class="blue" id="pr-blue"><i class="fas fa-circle"></i></span>
+                </div>
+                <span class="left-cars" id="pr-left-cars"></span>
+                <div class="pickup-date-container mb-3" id="pr-pickup-date-container">
+                    <label class="form-label" for="pr-pickup-date">Pickup Date</label>
+                    <input class="pickup-date form-control form-control-sm" id="pr-pickup-date"
+                           onchange="setPickupDate(this.id)" type="date">
+                </div>
+                <div class="return-date-container mb-3" id="pr-return-date-container">
+                    <label class="form-label" for="pr-return-date">Return Date</label>
+                    <input class="pickup-date form-control form-control-sm" id="pr-return-date"
+                           disabled onchange="setReturnDate(this.id)" type="date">
+                </div>
+                <div class="driver-check-container form-check">
+                    <input class="form-check-input" id="pr-driver" name="driver"
+                           disabled onclick="driverCheckboxOnClick(this.id)" type="checkbox" value="">
+                    <label class="form-check-label" for="pr-driver">
+                        Driver
+                    </label>
+                </div>
+                <button class="btn-increment" id="pr-btn-increment" onclick="incrementVehicleQTY(this.id)"><i
+                        class="far fa-plus-square"></i></button>
+                <span class="qty" id="pr-qty"></span>
+                <button class="btn-decrement" id="pr-btn-decrement" onclick="decrementVehicleQTY(this.id)"><i
+                        class="far fa-minus-square"></i></button>
+                <p class="rental-fee" id="pr-rental-fee">Rental Fee: <span>0.00</span></p>
+                <button class="btn-add-to-cart" id="pr-btn-add-to-cart" onclick="addVehicleToCart(this.id)">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+
+            <div class="luxury-cars-title-container" id="luxury-cars-title-container"><h1>Luxury Cars</h1></div>
+            <div class="luxury-cars-category" id="luxury-cars-category"></div>
+            <div class="luxury-car-details-container" id="luxury-car-details-container">
+                <div class="car-image" id="lx-car-image"></div>
+                <p class="car-brand" id="lx-car-brand"></p>
+                <p class="category-id" id="lx-category-id">CT-ID:<span></span></p>
+                <p class="transmission-type" id="lx-transmission-type">Transmission:<span></span></p>
+                <p class="fuel-type" id="lx-fuel-type">Fuel:<span></span></p>
+                <p class="no-of-passenger" id="lx-no-of-passenger">No.Passenger:<span></span></p>
+                <p class="daily-rate" id="lx-daily-rate">Daily Rate:<span></span></p>
+                <p class="monthly-rate" id="lx-monthly-rate">Monthly Rate:<span></span></p>
+                <p class="ldw-fee" id="lx-ldw-fee">LDW FEE:<span></span></p>
+                <p class="free-mileage" id="lx-free-mileage">Free Mileage:<span></span></p>
+                <p class="extra-km-price" id="lx-extra-km-price">Extra KM:<span></span></p>
+                <div class="color" id="lx-color">
+                    <span>Color:</span>
+                    <span class="white" id="lx-white"><i class="fas fa-circle"></i></span>
+                    <span class="black" id="lx-black"><i class="fas fa-circle"></i></span>
+                    <span class="red" id="lx-red"><i class="fas fa-circle"></i></span>
+                    <span class="blue" id="lx-blue"><i class="fas fa-circle"></i></span>
+                </div>
+                <span class="left-cars" id="lx-left-cars"></span>
+                <div class="pickup-date-container mb-3" id="lx-pickup-date-container">
+                    <label class="form-label" for="lx-pickup-date">Pickup Date</label>
+                    <input class="pickup-date form-control form-control-sm" id="lx-pickup-date"
+                           onchange="setPickupDate(this.id)" type="date">
+                </div>
+                <div class="return-date-container mb-3" id="lx-return-date-container">
+                    <label class="form-label" for="lx-return-date">Return Date</label>
+                    <input class="pickup-date form-control form-control-sm" id="lx-return-date"
+                           disabled onchange="setReturnDate(this.id)" type="date">
+                </div>
+                <div class="driver-check-container form-check">
+                    <input class="form-check-input" id="lx-driver" name="driver"
+                           disabled onclick="driverCheckboxOnClick(this.id)" type="checkbox" value="">
+                    <label class="form-check-label" for="lx-driver">
+                        Driver
+                    </label>
+                </div>
+                <button class="btn-increment" id="lx-btn-increment" onclick="incrementVehicleQTY(this.id)"><i
+                        class="far fa-plus-square"></i></button>
+                <span class="qty" id="lx-qty"></span>
+                <button class="btn-decrement" id="lx-btn-decrement" onclick="decrementVehicleQTY(this.id)"><i
+                        class="far fa-minus-square"></i></button>
+                <p class="rental-fee" id="lx-rental-fee">Rental Fee: <span></span></p>
+                <button class="btn-add-to-cart" disabled id="lx-btn-add-to-cart" onclick="addVehicleToCart(this.id)">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+
+            <div class="footer-container" id="footer-container"></div>
+        </div>
+    </section>
+    <section id="customerForm">
+        <div class="notification-popup" id="notification-popup">
+            <div class="notification-popup-container" id="notification-popup-container">
+                <div class="content" id="notification-content-container">
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>
+        <div class="cart-popup" id="cart-popup">
+            <div class="cart-popup-container" id="cart-popup-container">
+                <div class="button-container1">
+                </div>
+                <div class="content" id="cart-items-container">
+                </div>
+                <div class="total-container">
+                    <div>
+                        <p>Total:<span id="cart_total_rental_fee">0.00</span></p>
+                    </div>
+                </div>
+                <div class="bank-slip-container">
+                    <div class="mb-3">
+                        <p>Loss Damage Waiver Payment<br>Attach your bank slip here</p>
+                        <input class="form-control" id="bankSlip" required type="file">
+                    </div>
+                </div>
+                <div class="button-container2">
+                    <button class="btn-proceed" id="btn-proceed" type="button"><i class="far fa-check-circle"></i></button>
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>
+        <!-- <div class="profile-popup" id="profile-popup">
+            <div class="profile-popup-container" id="profile-popup-container">
+                <div class="content">
+                    <div>
+                        <p><span class="user-name" id="user-name"></span></p>
+                        <p><span class="user-email" id="user-email"></span></p>
+                        <p><span class="user-id" id="user-id"></span></p>
+                    </div>
+                </div>
+                <div class="footer"></div>
+            </div> -->
+    </section>
+    <section class="contact" id="contact">
+        <h1 class="title">Contact Us</h1>
+        <div class="container">
+            <div class="press">
+                <div class="header"></div>
+                <h3>Mobile Number</h3>
+                <p>091-2256789</p>
+            </div>
+            <div class="help">
+                <div class="header"></div>
+                <h3>Help & Support</h3>
+                <p>Our support team will<br>give you answers fast.</p>
+                <span>SUBMIT A REQUEST</span>
+            </div>
+            <div class="sales">
+                <div class="header"></div>
+                <h3>Address</h3>
+                <p>No.200,Galle Road,Panadura</p>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <h3>Copyright © 2022 Easy Car Rental. All Rights Reserved.</h3>
+    </section>
+</main>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="assets/script/script.js"></script>
+</body>
+</html>
